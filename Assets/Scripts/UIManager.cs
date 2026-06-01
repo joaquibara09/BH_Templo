@@ -5,25 +5,19 @@ using TMPro;
 
 public class UIManager : MonoBehaviour
 {
-    public TextMeshProUGUI textoUI;
-    private float tiempoTranscurrido;
-    private int contador = 0;
+    public TextMeshProUGUI scoreText;
+    public TextMeshProUGUI timerText;
+    private int score = 0;
 
-    void Start()
+    public void UpdateScore(int nuevoScore)
     {
-        tiempoTranscurrido = 0f;
-        textoUI.text = "Recolectados: 0 | Tiempo: 0s";
+        score = nuevoScore;
+        scoreText.text = "Score: " + score;
+        Debug.Log("Score: " + score);
     }
 
-    void Update()
+    public void UpdateTimer(float timer)
     {
-        tiempoTranscurrido += Time.deltaTime;
-        textoUI.text = "Recolectados: " + contador + " | Tiempo: " + Mathf.FloorToInt(tiempoTranscurrido) + "s";
-    }
-
-    public void Recolectar()
-    {
-        contador++;
-        Debug.Log("Recolectados: " + contador);
+        timerText.text = "00:" + Mathf.CeilToInt(timer).ToString("00");
     }
 }
