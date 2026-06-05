@@ -1,32 +1,53 @@
-﻿using System.Collections;
+﻿// GameManager.cs
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    private UIManager uiManager;
-    private float timer = 20f;
+    public UIManager UIManagerScript;
+    public float tiempoRestante = 60f;
     private bool juegoTerminado = false;
 
-    void Awake()
+    void Start()
     {
-        uiManager = FindObjectOfType<UIManager>();
+        Time.timeScale = 1;
     }
 
     void Update()
     {
-        if (!juegoTerminado)
+    if (juegoTerminado)
+    {
+        if (Input.GetKeyDown(KeyCode.R))
         {
-            timer -= Time.deltaTime;
-
-            if (timer <= 0)
-            {
-                timer = 0;
-                juegoTerminado = true;
-                Time.timeScale = 0f;
-            }
-
-            uiManager.UpdateTimer(timer);
+            RestartGame();
         }
+        return;
+    }
+
+    tiempoRestante -= Time.deltaTime;
+    UIManagerScript.UpdateTimer(tiempoRestante);
+
+    if (tiempoRestante <= 0)
+    {
+        tiempoRestante = 0;
+        juegoTerminado = true;
+        Time.timeScale = 0;
+        UIManagerScript.MostrarPantallaGameOver();
+    }
+    }
+
+    public void CondicionVictoria()
+    {
+        juegoTerminado = true;
+        Time.timeScale = 0;
+        UIManagerScript.MostrarPantallaWin();
+    }
+
+    public void RestartGame()
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

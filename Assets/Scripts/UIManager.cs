@@ -1,23 +1,51 @@
-﻿using System.Collections;
+﻿// UIManager.cs
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
 public class UIManager : MonoBehaviour
 {
-    public TextMeshProUGUI scoreText;
-    public TextMeshProUGUI timerText;
-    private int score = 0;
+    public GameObject goCartelPresione;
+    public GameObject panelWin;
+    public GameObject panelGameOver;
+    public TextMeshProUGUI txtTimer;
+    public TextMeshProUGUI txtPuntaje;
 
-    public void UpdateScore(int nuevoScore)
+    void Start()
     {
-        score = nuevoScore;
-        scoreText.text = "Score: " + score;
-        Debug.Log("Score: " + score);
+        HideCartelPresione();
+        panelWin.SetActive(false);
+        panelGameOver.SetActive(false);
     }
 
-    public void UpdateTimer(float timer)
+    public void HideCartelPresione()
     {
-        timerText.text = "00:" + Mathf.CeilToInt(timer).ToString("00");
+        goCartelPresione.SetActive(false);
+    }
+
+    public void ShowCartelPresione()
+    {
+        goCartelPresione.SetActive(true);
+    }
+
+    public void UpdateScore(int score)
+    {
+        txtPuntaje.text = "Puntaje: " + score;
+    }
+
+    public void UpdateTimer(float tiempo)
+    {
+        txtTimer.text = "Tiempo: " + Mathf.CeilToInt(tiempo);
+    }
+
+    public void MostrarPantallaWin()
+    {
+        panelWin.SetActive(true);
+    }
+
+    public void MostrarPantallaGameOver()
+    {
+        panelGameOver.SetActive(true);
     }
 }
