@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public UIManager UIManagerScript;
-    public float tiempoRestante = 60f;
+    public float tiempoRestante;
     private bool juegoTerminado = false;
 
     void Start()
@@ -17,14 +17,14 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-    if (juegoTerminado)
-    {
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            RestartGame();
-        }
-        return;
-    }
+    if (Input.GetKeyDown(KeyCode.T))
+{
+    UIManagerScript.MostrarPantallaWin();
+}
+if (Input.GetKeyDown(KeyCode.Y))
+{
+    UIManagerScript.MostrarPantallaGameOver();
+}
 
     tiempoRestante -= Time.deltaTime;
     UIManagerScript.UpdateTimer(tiempoRestante);
