@@ -302,7 +302,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: ' '
+  m_text: '¡Ganaste!'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -675,7 +675,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: ' '
+  m_text: 'Game Over'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2932,7 +2932,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Button
+  m_text: Reiniciar
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -5587,11 +5587,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b117ecea2f3b1284387c1f9df157746e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  goCartelPresione: {fileID: 1850655337}
+  goCartelPresione: {fileID: 0}
   panelWin: {fileID: 98075439}
   panelGameOver: {fileID: 191022852}
   txtTimer: {fileID: 1429288730}
   txtPuntaje: {fileID: 625485012}
+  btnReiniciar: {fileID: 1850655337}
 --- !u!4 &2062108341
 Transform:
   m_ObjectHideFlags: 0

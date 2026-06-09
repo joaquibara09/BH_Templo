@@ -17,12 +17,22 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
+    if (juegoTerminado && Input.GetKeyDown(KeyCode.R))
+    {
+        RestartGame();
+        return;
+    }
+
     if (Input.GetKeyDown(KeyCode.T))
 {
+    juegoTerminado = true;
+    Time.timeScale = 0;
     UIManagerScript.MostrarPantallaWin();
 }
 if (Input.GetKeyDown(KeyCode.Y))
 {
+    juegoTerminado = true;
+    Time.timeScale = 0;
     UIManagerScript.MostrarPantallaGameOver();
 }
 
