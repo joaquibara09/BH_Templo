@@ -23,19 +23,6 @@ public class GameManager : MonoBehaviour
         return;
     }
 
-    if (Input.GetKeyDown(KeyCode.T))
-{
-    juegoTerminado = true;
-    Time.timeScale = 0;
-    UIManagerScript.MostrarPantallaWin();
-}
-if (Input.GetKeyDown(KeyCode.Y))
-{
-    juegoTerminado = true;
-    Time.timeScale = 0;
-    UIManagerScript.MostrarPantallaGameOver();
-}
-
     tiempoRestante -= Time.deltaTime;
     UIManagerScript.UpdateTimer(tiempoRestante);
 

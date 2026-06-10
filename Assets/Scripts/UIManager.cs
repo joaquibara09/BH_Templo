@@ -9,7 +9,6 @@ public class UIManager : MonoBehaviour
     public GameObject goCartelPresione;
     public GameObject panelWin;
     public GameObject panelGameOver;
-    public GameObject btnReiniciar;
     public TextMeshProUGUI txtTimer;
     public TextMeshProUGUI txtPuntaje;
 
@@ -18,7 +17,6 @@ public class UIManager : MonoBehaviour
         HideCartelPresione();
         panelWin.SetActive(false);
         panelGameOver.SetActive(false);
-        if (btnReiniciar != null) btnReiniciar.SetActive(false);
     }
 
     public void HideCartelPresione()
@@ -44,12 +42,10 @@ public class UIManager : MonoBehaviour
     public void MostrarPantallaWin()
     {
         panelWin.SetActive(true);
-        if (btnReiniciar != null) btnReiniciar.SetActive(true);
     }
 
     public void MostrarPantallaGameOver()
     {
         panelGameOver.SetActive(true);
-        if (btnReiniciar != null) btnReiniciar.SetActive(true);
     }
 }

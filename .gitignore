@@ -104,3 +104,23 @@ InitTestScene*.unity*
 
 # Auto-generated cache in Assets folder
 /[Aa]ssets/[Ss]ceneDependencyCache*
+
+# ===========================================================================
+# Agregados manuales (BH_Templo) — basura autogenerada por el upgrade a Unity 6
+# que NO debe pushearse.
+# ===========================================================================
+
+# Datos de iluminación (GI / lightmaps / reflection probes) que Unity genera
+# solo al abrir o bakear la escena. Se regeneran solos; no se versionan.
+/[Aa]ssets/[Ss]cenes/SampleScene/
+/[Aa]ssets/[Ss]cenes/SampleScene.meta
+
+# External Dependency Manager (EDM4U): lo arrastraron los paquetes de Ads/IAP.
+# Este juego no usa anuncios ni compras in-app, es puro bloat.
+/[Aa]ssets/MobileDependencyResolver/
+/[Aa]ssets/MobileDependencyResolver.meta
+
+# Carpeta Resources: por ahora SOLO contiene BillingMode.json (generado por IAP).
+# Si más adelante guardás assets reales en Resources, quitá estas dos líneas.
+/[Aa]ssets/Resources/
+/[Aa]ssets/Resources.meta
