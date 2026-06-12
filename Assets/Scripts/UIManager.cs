@@ -6,7 +6,6 @@ using TMPro;
 
 public class UIManager : MonoBehaviour
 {
-    public GameObject goCartelPresione;
     public GameObject panelWin;
     public GameObject panelGameOver;
     public TextMeshProUGUI txtTimer;
@@ -14,24 +13,13 @@ public class UIManager : MonoBehaviour
 
     void Start()
     {
-        HideCartelPresione();
         panelWin.SetActive(false);
         panelGameOver.SetActive(false);
     }
 
-    public void HideCartelPresione()
+    public void UpdateScore(int score, int max)
     {
-        if (goCartelPresione != null) goCartelPresione.SetActive(false);
-    }
-
-    public void ShowCartelPresione()
-    {
-        if (goCartelPresione != null) goCartelPresione.SetActive(true);
-    }
-
-    public void UpdateScore(int score)
-    {
-        txtPuntaje.text = "Puntaje: " + score;
+        txtPuntaje.text = "Puntaje: " + score + "/" + max;
     }
 
     public void UpdateTimer(float tiempo)

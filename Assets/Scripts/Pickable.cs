@@ -9,9 +9,7 @@ public class Pickable : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            FindObjectOfType<UIManager>().UpdateScore(
-                FindObjectOfType<InteractiveArea>().AgregarPunto()
-            );
+            FindObjectOfType<InteractiveArea>().AgregarPunto();
             Destroy(gameObject);
         }
     }

@@ -7,30 +7,26 @@ public class InteractiveArea : MonoBehaviour
 {
     public UIManager UIManagerScript;
     public GameManager GameManagerScript;
-    public int puntajeMaximo = 3;
+    private int puntajeMaximo;
     private int puntajeActual = 0;
 
-    void OnTriggerEnter(Collider other)
+    void Awake()
     {
-        Pickable pickableScript = other.GetComponent<Pickable>();
-        if (pickableScript != null)
-        {
-            UIManagerScript.ShowCartelPresione();
-        }
+        puntajeMaximo = FindObjectsOfType<Pickable>().Length;
     }
 
-    void OnTriggerExit(Collider other)
+    void Start()
     {
-        UIManagerScript.HideCartelPresione();
+        UIManagerScript.UpdateScore(0, puntajeMaximo);
     }
 
-    public int AgregarPunto()
+    public void AgregarPunto()
     {
         puntajeActual++;
+        UIManagerScript.UpdateScore(puntajeActual, puntajeMaximo);
         if (puntajeActual >= puntajeMaximo)
         {
             GameManagerScript.CondicionVictoria();
         }
-        return puntajeActual;
     }
 }
