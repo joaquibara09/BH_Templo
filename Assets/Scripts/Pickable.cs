@@ -1,16 +1,29 @@
-﻿// Pickable.cs
-using System.Collections;
-using System.Collections.Generic;
+// Pickable.cs
 using UnityEngine;
 
 public class Pickable : MonoBehaviour
 {
+    private InteractiveArea interactiveArea;
+
+    void Awake()
+    {
+        interactiveArea = FindObjectOfType<InteractiveArea>();
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
-        {
-            FindObjectOfType<InteractiveArea>().AgregarPunto();
-            Destroy(gameObject);
-        }
+            interactiveArea.EntrarEnRango(this);
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+            interactiveArea.SalirDeRango(this);
+    }
+
+    public void Destruir()
+    {
+        Destroy(gameObject);
     }
 }
