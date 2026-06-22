@@ -23,7 +23,7 @@ public class InteractiveArea : MonoBehaviour
     {
         if (pickableActual != null && Input.GetKeyDown(KeyCode.E))
         {
-            UIManagerScript.MostrarDestruidoPorUnSegundo();
+            UIManagerScript.MostrarColeccionadoPorUnSegundo();
             AgregarPunto();
             pickableActual.Destruir();
             pickableActual = null;
@@ -33,7 +33,7 @@ public class InteractiveArea : MonoBehaviour
     public void EntrarEnRango(Pickable p)
     {
         pickableActual = p;
-        UIManagerScript.MostrarPanelE("Apreta E para destruir");
+        UIManagerScript.MostrarPanelE("Presione E para coleccionar");
     }
 
     public void SalirDeRango(Pickable p)

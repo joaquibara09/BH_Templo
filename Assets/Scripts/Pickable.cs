@@ -1,4 +1,3 @@
-// Pickable.cs
 using UnityEngine;
 
 public class Pickable : MonoBehaviour

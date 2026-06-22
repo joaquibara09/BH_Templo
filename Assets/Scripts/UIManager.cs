@@ -63,9 +63,9 @@ public class UIManager : MonoBehaviour
         panelE.SetActive(true);
     }
 
-    public void MostrarDestruidoPorUnSegundo()
+    public void MostrarColeccionadoPorUnSegundo()
     {
-        txtPanelE.text = "Objeto destruido\n+1 punto";
+        txtPanelE.text = "Objeto coleccionado \n+1 punto";
         panelE.SetActive(true);
         tiempoOcultarPanel = 1f;
     }
