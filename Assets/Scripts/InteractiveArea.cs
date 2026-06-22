@@ -33,7 +33,7 @@ public class InteractiveArea : MonoBehaviour
     public void EntrarEnRango(Pickable p)
     {
         pickableActual = p;
-        UIManagerScript.MostrarPanelD("Apreta E para destruir");
+        UIManagerScript.MostrarPanelE("Apreta E para destruir");
     }
 
     public void SalirDeRango(Pickable p)
@@ -41,7 +41,7 @@ public class InteractiveArea : MonoBehaviour
         if (pickableActual == p)
         {
             pickableActual = null;
-            UIManagerScript.OcultarPanelD();
+            UIManagerScript.OcultarPanelE();
         }
     }
 

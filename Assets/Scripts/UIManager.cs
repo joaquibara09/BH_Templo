@@ -8,19 +8,19 @@ public class UIManager : MonoBehaviour
 {
     public GameObject panelWin;
     public GameObject panelGameOver;
-    public GameObject panelD;
+    public GameObject panelE;
     public TextMeshProUGUI txtTimer;
     public TextMeshProUGUI txtPuntaje;
 
-    private TextMeshProUGUI txtPanelD;
+    private TextMeshProUGUI txtPanelE;
     private float tiempoOcultarPanel = -1f;
 
     void Start()
     {
         panelWin.SetActive(false);
         panelGameOver.SetActive(false);
-        panelD.SetActive(false);
-        txtPanelD = panelD.GetComponentInChildren<TextMeshProUGUI>();
+        panelE.SetActive(false);
+        txtPanelE = panelE.GetComponentInChildren<TextMeshProUGUI>();
     }
 
     void Update()
@@ -30,7 +30,7 @@ public class UIManager : MonoBehaviour
             tiempoOcultarPanel -= Time.deltaTime;
             if (tiempoOcultarPanel <= 0)
             {
-                panelD.SetActive(false);
+                panelE.SetActive(false);
             }
         }
     }
@@ -56,23 +56,23 @@ public class UIManager : MonoBehaviour
         panelGameOver.SetActive(true);
     }
 
-    public void MostrarPanelD(string mensaje)
+    public void MostrarPanelE(string mensaje)
     {
         tiempoOcultarPanel = -1f;
-        txtPanelD.text = mensaje;
-        panelD.SetActive(true);
+        txtPanelE.text = mensaje;
+        panelE.SetActive(true);
     }
 
     public void MostrarDestruidoPorUnSegundo()
     {
-        txtPanelD.text = "Objeto destruido\n+1 punto";
-        panelD.SetActive(true);
+        txtPanelE.text = "Objeto destruido\n+1 punto";
+        panelE.SetActive(true);
         tiempoOcultarPanel = 1f;
     }
 
-    public void OcultarPanelD()
+    public void OcultarPanelE()
     {
         tiempoOcultarPanel = -1f;
-        panelD.SetActive(false);
+        panelE.SetActive(false);
     }
 }
