@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 public class UIManager : MonoBehaviour
@@ -9,6 +10,7 @@ public class UIManager : MonoBehaviour
     public GameObject panelWin;
     public GameObject panelGameOver;
     public GameObject panelE;
+    public GameObject panelPuntaje;
     public TextMeshProUGUI txtTimer;
     public TextMeshProUGUI txtPuntaje;
 
@@ -17,8 +19,8 @@ public class UIManager : MonoBehaviour
 
     void Start()
     {
-        panelWin.SetActive(false);
-        panelGameOver.SetActive(false);
+        if (panelWin != null) panelWin.SetActive(false);
+        if (panelGameOver != null) panelGameOver.SetActive(false);
         panelE.SetActive(false);
         txtPanelE = panelE.GetComponentInChildren<TextMeshProUGUI>();
     }
@@ -47,13 +49,14 @@ public class UIManager : MonoBehaviour
 
     public void MostrarPantallaWin()
     {
-        panelWin.SetActive(true);
-        panelGameOver.SetActive(false);
+        txtPuntaje.text = "¡GANASTE!";
+        if (panelPuntaje != null) panelPuntaje.GetComponent<Image>().color = Color.green;
     }
 
     public void MostrarPantallaGameOver()
     {
-        panelGameOver.SetActive(true);
+        txtPuntaje.text = "GAME OVER";
+        if (panelPuntaje != null) panelPuntaje.GetComponent<Image>().color = Color.red;
     }
 
     public void MostrarPanelE(string mensaje)
